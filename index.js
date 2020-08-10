@@ -1,19 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
+import Count from './components/Count'
 
-//With hooks
-function Count(props){
-  const [count, setCount] = useState(0); //ini value
-  return(
-    <div>
-      <button onClick={ ()=> setCount(count+1) }> Like</button>
-      &nbsp; Likes: {count}
-      <hr/>
-    </div>
-  );
-}
 
 class Blog extends Component {
   constructor() {
