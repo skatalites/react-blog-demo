@@ -6,30 +6,37 @@ import './style.css';
 class Blog extends Component {
   constructor() {
     super();
-    this.state = { name: 'React' };
+    this.state = { 
+      articles:[]
+      };
   }
 
   componentDidMount(){
     let promesa = fetch('http://jsonplaceholder.typicode.com/posts');
 
     //Forma 1
-    promesa.then( (response) => {
+    /*promesa.then( (response) => {
        response.json().then( (data) => {
           console.log(data);
       });
-    });
+    });*/
 
     //Forma 2
     promesa.then(response => response.json()).then(data=>{
-      console.log(data);
+      this.setState({
+        articles: data
+      });
     });
   }
 
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p></p>
+       {
+        this.state.articles.map((article)=>{
+          return <p>{article.title}</p>
+        })
+      }
       </div>
     );
   }
