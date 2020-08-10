@@ -8,7 +8,6 @@ function Count(props){
     <div>
       <button className="likeButton" onClick={ ()=> setCount(count+1) }> Like</button>
       &nbsp; Likes: {count}
-      <hr/>
     </div>
   );
 }

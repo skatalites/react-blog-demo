@@ -38,9 +38,8 @@ class Blog extends Component {
         this.state.articles.map((article)=>{
           return <div className="card" key={article.id.toString()}>
             <p>
-              {article.title}
+              <b>{article.title}</b>
             </p>
-            <hr/>
             <p>
               {article.body}
             </p>
