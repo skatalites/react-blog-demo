@@ -33,28 +33,22 @@ class Blog extends Component {
 
   render() {
     return (
-      <ract-fragment>
-      <div>
-      <Count />
-      </div>
-      
       <div>
        {
         this.state.articles.map((article)=>{
-          return <div className = "card" key={article.id.toString()}>
+          return <div className="card" key={article.id.toString()}>
             <p>
               {article.title}
             </p>
             <hr/>
             <p>
-              {article.body}              
+              {article.body}
             </p>
+            <Count /> 
           </div>
         })
       }
       </div>
-     
-      </ract-fragment>
     );
   }
 }
