@@ -12,7 +12,7 @@ class Blog extends Component {
   }
 
   componentDidMount(){
-    let promesa = fetch('http://jsonplaceholder.typicode.com/posts');
+    let promesa = fetch('https://jsonplaceholder.typicode.com/posts');
 
     //Forma 1
     /*promesa.then( (response) => {
@@ -34,7 +34,15 @@ class Blog extends Component {
       <div>
        {
         this.state.articles.map((article)=>{
-          return <p>{article.title}</p>
+          return <div className = "card" key={article.id.toString()}>
+            <p>
+              {article.title}
+            </p>
+            <hr/>
+            <p>
+              {article.body}              
+            </p>
+          </div>
         })
       }
       </div>
